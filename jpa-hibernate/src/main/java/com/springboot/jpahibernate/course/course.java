@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class course {
     @Id
     private int id;
-    //@Column(name = "definition") // It has to correspond to that is in database
+    //@Column(name = "definition") // It has to correspond to that is in database but
     private String definition;
     //@Column (name = "instructor")
     private String instructor;
