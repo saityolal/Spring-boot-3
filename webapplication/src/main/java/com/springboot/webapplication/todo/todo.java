@@ -1,6 +1,8 @@
 package com.springboot.webapplication.todo;
 
 import jakarta.validation.constraints.Size;
+import jakarta.websocket.OnError;
+
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -14,6 +16,7 @@ public class todo {
     @Size(min = 10, message = "Error: Description should be at least 10 characters.")
     private String description;
     private LocalDate targetDate;
+    
     private boolean done;
 
     public todo(int id, String username, String description, LocalDate targetDate, boolean done) {
