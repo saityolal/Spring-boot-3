@@ -12,35 +12,31 @@ public class loginController {
     @Autowired
     public AuthenticationService authenticationService;
 
-//    @RequestMapping("/login")
-//    public String login(@RequestParam String name, Model model) {
-//        model.addAttribute("name", name);
-//        return "login";
-//
-//    }
-    @RequestMapping(value="login", method= RequestMethod.GET)
-    public String login() {
-        return "login";
+   
+    // @RequestMapping(value="login", method= RequestMethod.GET)        // Spring security already provide login page 
+    // public String login() {
+    //     return "login";
 
-    }
-    @RequestMapping(value="login", method= RequestMethod.POST)
-    public String welcome(@RequestParam String name,@RequestParam String password, Model model) {
+    // }
+    // @RequestMapping(value="login", method= RequestMethod.POST)
+    // public String welcome(@RequestParam String name,@RequestParam String password, Model model) {
 
-        model.addAttribute("name", name);
-        model.addAttribute("password", password);
+    //     model.addAttribute("name", name);
+    //     model.addAttribute("password", password);
 
-       if(authenticationService.authenticate(name, password)){
+    //    if(authenticationService.authenticate(name, password)){
 
-           return "welcome";
+    //        return "welcome";
 
-        }   
-       model.addAttribute("error", "Invalid Credentials");
-        return "login";
-       // return "welcome";
+    //     }   
+    //    model.addAttribute("error", "Invalid Credentials");
+    //     return "login";
+    //    // return "welcome";
 
-    }
+    // }
     @RequestMapping("/welcome")
-    public String welcome() {
+    public String welcome(Model model) {
+        model.addAttribute("name", authenticationService.getLoggedinUsername());
         return "welcome";
 
     }

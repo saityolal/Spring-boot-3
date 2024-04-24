@@ -1,12 +1,9 @@
 package com.springboot.webapplication.todo;
 
 import jakarta.validation.constraints.Size;
-import jakarta.websocket.OnError;
-
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Component
 public class todo {

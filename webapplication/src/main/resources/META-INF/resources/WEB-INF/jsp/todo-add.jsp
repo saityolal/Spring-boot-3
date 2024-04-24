@@ -1,7 +1,7 @@
-    <%@ include file="common/navigation.jspf" %>
-    <%@ include file="common/header.jspf" %>
-    <%@ include file="common/footer.jspf" %>
-   
+<%@ include file="common/navigation.jspf" %>
+<%@ include file="common/header.jspf" %>
+<%@ include file="common/footer.jspf" %>
+
             <div class="container">
                 <h1>Welcome ${name}, You can add todo below here: </h1>
                 <br>
@@ -10,15 +10,15 @@
 
 
                     ID:
-                    <form:input type="hidden" path="id" /> <!-- path name must match with your object attributes -->>
+                    <form:input type="hidden" path="id" /> <!-- path name must match with your object attributes -->
                     <br>
-                    <br>    
+                    <br>
                     Description:
                     <form:input type="text" path="description" required="required" />
                     <br>
                     <br>
                     targetDate:
-                    <form:input type="text" path="targetDate" />
+                    <form:input type="text" path="targetDate" class="targetDate" />
                     <br>
                     <br>
                     Is Done:
@@ -32,8 +32,15 @@
 
                 </form:form>
             </div>
-        <script type="text/javascript">
-            $('.targetDate').datepicker({
-                format: 'yyyy-mm-dd'
-            });
-        </script>
+            <!-- Include jQuery Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Include jQuery UI Library for datepicker -->
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+            <script type="text/javascript">
+                $('.targetDate').datepicker({
+                    format: 'yyyy-mm-dd'
+                });
+            </script>

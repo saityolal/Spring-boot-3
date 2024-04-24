@@ -1,13 +1,10 @@
 package com.springboot.webapplication.todo;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.function.Predicate;
 
 @Service
 public class todoService {
@@ -37,7 +34,7 @@ public class todoService {
     }
 
     public void addTodo(String username, String description, LocalDate targetDate, boolean done) {
-        todos.add(new todo(++todoCounter, username, description, targetDate , done));
+        todos.add(new todo(++todoCounter, username, description, targetDate, done));
     }
 
     public todo findTodoById(int id) {
@@ -72,5 +69,15 @@ public class todoService {
                 break;
             }
         }
+    }
+
+    public List<todo> findByUsername(String username) {
+        for (int i = 0; i < todos.size(); i++) {
+            if (todos.get(i).getUsername() == username) {
+                    
+                return (List<todo>) todos.get(i);
+            }
+        }
+        return todos;
     }
 }
