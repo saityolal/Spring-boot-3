@@ -10,7 +10,7 @@ import java.util.List;
 public class todoService {
     public ArrayList<todo> todos = new ArrayList<>();
 
-    public int getTodoCounter() {
+    public static int getTodoCounter() {
         return todoCounter;
     }
 
@@ -18,7 +18,7 @@ public class todoService {
         this.todoCounter = todoCounter;
     }
 
-    private int todoCounter = 0;
+    private static int todoCounter = 0;
 
     public todoService() {
 
